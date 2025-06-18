@@ -1,0 +1,25 @@
+{
+  "name": "squint-require-bug-repro",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "release:vite": "vite build resources/public --config=vite.config.mjs",
+    "release:squint": "squint compile",
+    "release": "concurrently \"npm run release:squint\" \"npm run release:vite\"",
+    "start:vite": "vite resources/public --config=vite.config.mjs",
+    "start:squint": "squint watch",
+    "start": "concurrently \"npm run start:squint\" \"npm run start:vite\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "squint-cljs": "^0.8.148"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "vite": "^6.3.5"
+  }
+}
